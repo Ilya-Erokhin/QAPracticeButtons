@@ -8,7 +8,12 @@ class HomePage(BasePage):
         super().__init__(driver)
 
     simple_button_on_start_link_text = 'Simple button'
+    text_input_link_text = 'Text input'
 
     def select_simple_button_page(self):
         self.click_on_element('simple_button_on_start_link_text', self.simple_button_on_start_link_text)
         return SimpleButtonPage(self.driver)
+
+    def select_text_input_page(self):
+        self.click_on_element('text_input_link_text', self.text_input_link_text)
+
