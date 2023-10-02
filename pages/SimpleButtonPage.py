@@ -1,9 +1,14 @@
 from pages.BasePage import BasePage
+from utilities import ConfigReader
+
 
 class SimpleButtonPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
+        base_url = ConfigReader.read_configuration('basic info', 'base_url')
+        endpoint = "elements/button/simple"
+        self.url = f"{base_url}/{endpoint}"
 
     button_click_selector_id = 'submit-id-submit'
     button_simple_button_text_selector_class_name = 'tab active'
